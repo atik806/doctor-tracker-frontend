@@ -219,7 +219,7 @@ a redirect loop.
 
 | Dashboard | Doctors | Patients |
 |---|---|---|
-| ![Mobile dashboard](docs/screenshots/mobile-dashboard.jpg) | ![Mobile doctors](docs/screenshots/mobile-doctors.jpg) | ![Mobile patients](docs/screenshots/mobile-patients.jpg) |
+| ![Mobile dashboard](docs/screenshots/mobile-dashboard.png) | ![Mobile doctors](docs/screenshots/mobile-doctors.png) | ![Mobile patients](docs/screenshots/mobile-patients.png) |
 
 ---
 
