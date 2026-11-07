@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/* Design tokens. Components use these names (bg-surface, text-muted, ...), never raw hex values. */
+:root {
+  --background: #f4f6f9;
+  --surface: #ffffff;
+  --surface-muted: #f8fafc;
+  --border: #e3e8ef;
+  --border-strong: #cfd7e2;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --subtle: #94a3b8;
+
+  --primary: #0d9488;
+  --primary-hover: #0f766e;
+  --primary-soft: #e6f6f4;
+  --primary-foreground: #ffffff;
+
+  --danger: #e11d48;
+  --danger-hover: #be123c;
+  --danger-soft: #fff1f3;
+
+  /* Patient condition colours */
+  --stable: #10b981;
+  --stable-soft: #ecfdf5;
+  --recovering: #0ea5e9;
+  --recovering-soft: #eff8ff;
+  --observation: #f59e0b;
+  --observation-soft: #fffbeb;
+  --critical: #e11d48;
+  --critical-soft: #fff1f3;
+  --discharged: #64748b;
+  --discharged-soft: #f1f5f9;
+
+  /* Chart series */
+  --chart-1: #0d9488;
+  --chart-2: #6366f1;
+  --chart-3: #0ea5e9;
+  --chart-4: #f59e0b;
+
+  --shadow-card: 0 1px 2px rgb(15 23 42 / 0.04), 0 1px 3px rgb(15 23 42 / 0.04);
+  --shadow-pop: 0 12px 32px -8px rgb(15 23 42 / 0.18), 0 4px 8px -4px rgb(15 23 42 / 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-danger: var(--danger);
+  --color-danger-hover: var(--danger-hover);
+  --color-danger-soft: var(--danger-soft);
+  --color-stable: var(--stable);
+  --color-stable-soft: var(--stable-soft);
+  --color-recovering: var(--recovering);
+  --color-recovering-soft: var(--recovering-soft);
+  --color-observation: var(--observation);
+  --color-observation-soft: var(--observation-soft);
+  --color-critical: var(--critical);
+  --color-critical-soft: var(--critical-soft);
+  --color-discharged: var(--discharged);
+  --color-discharged-soft: var(--discharged-soft);
+  --shadow-card: var(--shadow-card);
+  --shadow-pop: var(--shadow-pop);
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Native <dialog> used by the Modal component */
+dialog:focus-visible {
+  outline: none;
+}
+
+dialog::backdrop {
+  background: rgb(15 23 42 / 0.45);
+  backdrop-filter: blur(2px);
+}
+
+dialog[open] {
+  animation: dialog-in 160ms ease-out;
+}
+
+@keyframes dialog-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Login page: deep teal gradient with a faint dot grid on the brand panel */
+.login-brand {
+  background-color: #0f5f59;
+  background-image:
+    radial-gradient(rgb(255 255 255 / 0.09) 1px, transparent 1px),
+    linear-gradient(160deg, #0f766e 0%, #115e59 45%, #134e4a 100%);
+  background-size:
+    22px 22px,
+    100% 100%;
+}
+
+/* Login page: very soft glow behind the sign-in card */
+.login-form-bg {
+  background:
+    radial-gradient(60% 50% at 50% 40%, rgb(13 148 136 / 0.08), transparent 70%),
+    var(--background);
+}
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(90deg, #eef2f6 25%, #f6f8fa 50%, #eef2f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
