@@ -33,7 +33,7 @@ export function DoctorProfileCard({ doctor }: { doctor: Doctor }) {
             </span>
           </div>
         </div>
-        <div className="grid min-w-0 flex-1 gap-4 sm:grid-cols-2 2xl:grid-cols-4">
+        <div className="grid min-w-0 flex-1 gap-4 sm:grid-cols-2">
           <DetailItem icon={Building2} label="Hospital" value={doctor.hospital} />
           <DetailItem icon={Phone} label="Phone" value={doctor.phone} />
           <DetailItem icon={Mail} label="Email" value={doctor.email} />
