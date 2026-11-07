@@ -1,5 +1,16 @@
 # Doctor Tracker: Frontend
 
+## Live demo
+
+| | Link |
+|---|---|
+| **App** | https://doctor-tracker-frontend-lake.vercel.app |
+| **API** | https://doctor-tracker-backend-self.vercel.app/api/health |
+| **Frontend repo** | https://github.com/atik806/doctor-tracker-frontend |
+| **Backend repo** | https://github.com/atik806/doctor-tracker-backend |
+
+Sign in with **`admin@doctortracker.com` / `Admin@123`** (full access) or **`staff@doctortracker.com` / `Staff@123`** (read-only), or use the demo buttons on the login page.
+
 ## Description
 
 **Doctor Tracker** is a secure admin portal for clinics and hospitals. Signed-in staff can manage their
@@ -60,6 +71,12 @@ The login page also has buttons that fill these in for you.
 
 > The mock API keeps its data in memory. Restarting the server resets it to the seed data
 > (26 doctors, 320 patients) and signs everyone out.
+
+### Deploying (Vercel)
+
+The live app runs on Vercel. The project uses the **Next.js** framework preset (also set in `vercel.json`), and one
+environment variable: `API_URL=https://doctor-tracker-backend-self.vercel.app`. `API_URL` is read when the app is **built** (it creates the
+`/api/*` rewrite), so redeploy after changing it. `.vercelignore` keeps local `.env*` files out of the upload.
 
 ---
 
